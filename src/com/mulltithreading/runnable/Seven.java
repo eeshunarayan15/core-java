@@ -1,6 +1,6 @@
-package com.multithreading;
+package com.mulltithreading.runnable;
 
-public class Seven extends Thread{
+public class Seven implements Runnable {
     @Override
   public  void  run(){
         Thread.currentThread().setName("Seven Thread");
