@@ -6,8 +6,12 @@ public class Account {
 //    StringBuffer synchronised
     private  StringBuffer s=new StringBuffer("xyz");
     //removed synchronized keyword as we are using stringBuffer
+    int change=0;
     public   void deduct(String a,String cardName){
 //           this.s+=a;
+      synchronized (this){
+          change++;
+      }
         this.s.append(a);
 //        System.out.println("Debit card Successfully  "+cardName);
     }
@@ -22,6 +26,7 @@ public class Account {
 
         }
             System.out.println(count);
+        System.out.println(change);
     }
 
 }
